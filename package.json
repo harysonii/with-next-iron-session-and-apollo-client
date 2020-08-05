@@ -1,0 +1,26 @@
+{
+  "name": "nextjs-graphql-api-and-next-iron-session",
+  "version": "1.0.0",
+  "description": "A guide to get your session details in a nextjs graphQL API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [Nextjs, GraphQL, next-iron-session],
+  "author": "@KvngOnuoha",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/client": "^3.0.2",
+    "apollo-server-micro": "^2.16.0",
+    "graphql": "^15.3.0",
+    "graphql-request": "^2.0.0",
+    "nanoid": "^3.1.12",
+    "next": "^9.5.1",
+    "next-iron-session": "^4.1.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "swr": "^0.2.3",
+  }
+}
