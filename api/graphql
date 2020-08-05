@@ -1,0 +1,32 @@
+import { ApolloServer } from "apollo-server-micro";
+import withSession from "src/utilities/auth/session";
+
+let user;
+const apolloServer = new ApolloServer({
+  context: withSession(async ({ req, res, connection }) => {
+
+    if (connection) {
+      console.log("connection", connection);
+      console.log("connection", connection.context);
+    } else {
+      const authScope = req.headers.authorization;
+      // console.log(authScope);
+      const test = req.session.get("user");
+      // console.log("test", test);
+      user = authScope || test.token;
+      console.log("user", user);
+
+      return { client };
+    }
+  }),
+  typeDefs,
+  resolvers,
+});
+
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
+export default apolloServer.createHandler({ path: "/api/graphql" });
